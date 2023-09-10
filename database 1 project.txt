@@ -1,0 +1,74 @@
+
+elcome to the MySQL monitor.  Commands end with ; or \g.
+our MySQL connection id is 16
+erver version: 5.5.22 MySQL Community Server (GPL)
+
+opyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+
+racle is a registered trademark of Oracle Corporation and/or its
+ffiliates. Other names may be trademarks of their respective
+wners.
+
+ype 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+ysql> use item;
+atabase changed
+ysql> select* from item;
+--------+---------------+-------+----------+
+ itemid | itemname      | price | itemtype |
+--------+---------------+-------+----------+
+    101 | burger        |   200 | large    |
+    102 |  french fries |   100 | medium   |
+    103 | pizza         |   250 | large    |
+    104 | sandwich      |   150 | small    |
+    105 | momos         |   300 | medium   |
+--------+---------------+-------+----------+
+ rows in set (0.00 sec)
+
+ysql>  use bill;
+atabase changed
+ysql> select * from billing;
+-------+------+------------+-------------+------+------+--------+--------+----------+----------+
+ price | qty  | totalprice | invoicedate | cgst | sgst | billno | itemid | itemtype | itemname |
+-------+------+------------+-------------+------+------+--------+--------+----------+----------+
+   500 |    6 |        600 | 2019-03-10  |    7 |    8 |     89 |    103 | large    | pizza    |
+-------+------+------------+-------------+------+------+--------+--------+----------+----------+
+ row in set (0.00 sec)
+
+ysql> desc billing;
+-------------+-------------+------+-----+---------+-------+
+ Field       | Type        | Null | Key | Default | Extra |
+-------------+-------------+------+-----+---------+-------+
+ price       | float       | YES  |     | NULL    |       |
+ qty         | int(11)     | YES  |     | NULL    |       |
+ totalprice  | float       | YES  |     | NULL    |       |
+ invoicedate | date        | YES  |     | NULL    |       |
+ cgst        | float       | YES  |     | NULL    |       |
+ sgst        | float       | YES  |     | NULL    |       |
+ billno      | int(11)     | YES  |     | NULL    |       |
+ itemid      | int(11)     | YES  |     | NULL    |       |
+ itemtype    | varchar(30) | YES  |     | NULL    |       |
+ itemname    | varchar(20) | YES  |     | NULL    |       |
+-------------+-------------+------+-----+---------+-------+
+0 rows in set (0.24 sec)
+
+ysql>
+
+
+
+
+
+
+
+
+ create database item;
+
+
+ use item;
+
+ create table item
+     (itemid int,
+     itemname varchar(20),
+    price float,itemtype varchar(30));
+
+
